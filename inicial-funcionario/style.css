@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'Font1';
+    src: url('../fonts/eurostile.TTF')
+}
+
+@font-face {
+    font-family: 'Font2';
+    src: url('../fonts/Montserrat-VariableFont_wght.ttf')
+}
+
+
+body {
+    background-color: #EEEEFF;
+    margin-left:  20px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+.comeco {
+    display: flex;
+    flex-direction: row;
+   align-items: center;
+}
+
+.saudacao1 {
+    margin: 0;
+    padding-left: 15px;
+    font-family: 'Font1';
+    font-size: 40px;
+    font-weight: 100;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+
+.saudacao2 {
+    margin: 0;
+    margin-top: 5px; /* ou 4px, 6px, dependendo do visual desejado */
+    padding-left: 15px;
+    font-family: 'Font2';
+    font-size: 30px;
+    font-weight: 300;
+    }
+
+    body {
+        margin: 0;
+        background: #ecebff;
+      }
+      
+      .sidebar {
+        width: 70px;
+        background-color: #6c63ff;
+        height: 410px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 40px;
+        border-radius: 40px;
+        margin-top: 30px;
+      }
+      
+      .menu-item {
+        width: 50px;
+        height: 50px;
+        margin: 20px 0;
+        background: none;
+        border: none;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+       
+      }
+      
+      .menu-item .icon {
+        width: 100%;
+        height: 100%;
+        display: block;
+        mask-size: cover;
+        -webkit-mask-size: cover;
+        background-color: white;
+      }
+      
+      /* Exemplo de ícones usando mask (ou pode usar SVG inline) */
+      .icon.home       { mask: url('./img/home.png') no-repeat center; }
+      .icon.notebook   { mask: url('./img/justificativas.png') no-repeat center; }
+      .icon.cap        { mask: url('./img/cursos.png') no-repeat center; }
+      .icon.chart      { mask: url('./img/desempenho.png') no-repeat center; }
+      .icon.phone      { mask: url('./img/solicitacoes.png') no-repeat center; }
+      
+      /* Estado ativo (com "bolinha") */
+      
+      .icon-circle {
+        width: 55px;
+        height: 55px;
+        background-color: #4d47c3; /* roxo escuro */
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+      
+      .icon-circle img {
+        width: 25px;
+        height: 25px;
+      }
+
+      .tudo {
+        display: flex;
+        flex-direction: row;
+        border: solid 2px;
+      }
+
+      .informacoes {
+        display: flex;
+        flex-direction: column;
+        border: solid 2px;
+        margin-left: 50px;
+        margin-top: 30px;
+      }
+
+      .part1 {
+        display: flex;
+        flex-direction: row;
+    
+      }
+
+      .solicitacoes {
+        background-color: white;
+        border-radius: 50px;
+        width: 250px;
+        height: 250px;
+        box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
+        -webkit-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
+        -moz-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .img1 {
+        width: 200px;
+        height: 200px;
+      }
