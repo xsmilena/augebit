@@ -133,20 +133,34 @@ body {
     
       }
 
-      .solicitacoes {
+      .caixa {
         background-color: white;
         border-radius: 50px;
-        width: 250px;
-        height: 250px;
+        width: 270px;
+        height: 270px;
         box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
         -webkit-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
         -moz-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-right: 30px;
       }
 
       .img1 {
-        width: 200px;
-        height: 200px;
+        width: 220px;
+        height: 220px;
       }
+    
+.info-texto {
+    font-size: 16px;
+    font-family: 'Font2';
+    margin-top: -5px;
+}
+
+.info-subtexto {
+    font-size: 16px;
+    font-family: 'Font2';
+    font-weight: 500;
+    margin-top: -10px;
+}
