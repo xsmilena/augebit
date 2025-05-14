@@ -133,7 +133,7 @@ body {
     
       }
 
-      .caixa {
+      .caixa1 {
         background-color: white;
         border-radius: 50px;
         width: 270px;
@@ -145,22 +145,216 @@ body {
         flex-direction: column;
         align-items: center;
         margin-right: 30px;
+    
       }
 
       .img1 {
-        width: 220px;
-        height: 220px;
+        width: 230px;
+        height: 230px;
       }
     
 .info-texto {
-    font-size: 16px;
-    font-family: 'Font2';
-    margin-top: -5px;
+  font-size: 16px;
+  font-family: 'Font2';
+  margin-top: -15px;
+  color: black;
+  text-decoration: none;
+  font-family: 'Font2';
+  font-weight: 650;
 }
 
 .info-subtexto {
-    font-size: 16px;
-    font-family: 'Font2';
-    font-weight: 500;
-    margin-top: -10px;
+  font-size: 15px;
+  font-family: 'Font2';
+  font-weight: 400;
+  color: black;
+  text-decoration: none;
+  font-family: 'Font2';
+  font-weight: 400;
+}
+
+.img2 {
+  width: 190px;
+  height: 190px;
+  margin-top: 15px;
+}
+
+.info-texto2 {
+  font-size: 16px;
+  font-family: 'Font2';
+  margin-top: 8px;
+  color: black;
+  text-decoration: none;
+  font-family: 'Font2';
+  font-weight: 650;
+}
+
+.info-subtexto2 {
+  font-size: 15px;
+  font-family: 'Font2';
+  font-weight: 400;
+  color: black;
+  text-decoration: none;
+  font-family: 'Font2';
+  font-weight: 400;
+}
+
+.info-texto3 {
+  font-size: 16px;
+  font-family: 'Font2';
+  margin-top: -15px;
+  color: black;
+  text-decoration: none;
+  font-family: 'Font2';
+  font-weight: 650;
+}
+
+.info-subtexto3 {
+  font-size: 15px;
+  font-family: 'Font2';
+  font-weight: 400;
+  color: black;
+  text-decoration: none;
+  font-family: 'Font2';
+  font-weight: 400;
+
+}
+
+.caixa2 {
+  background-color: white;
+  border-radius: 50px;
+  width: 440px;
+  height: 270px;
+  box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
+  -webkit-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
+  -moz-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30px;
+
+}
+
+.part2 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+
+}
+
+.textinhos {
+  display: flex;
+  flex-direction: column;
+}
+
+.caixa3 {
+  background-color: #9a98ff8d;
+  border-radius: 50px;
+  width: 270px;
+  height: 270px;
+  box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
+  -webkit-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
+  -moz-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30px;
+}
+
+button {
+  background-color: #6E6CFF;
+  width: 45px;
+  height: 45px;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  size: 15px;
+}
+
+.caixa4 {
+  background-color: #9a98ff60;
+  border-radius: 50px;
+  width: 270px;
+  height: 270px;
+  box-shadow: 2px 3px 33px 3px #6d6dffb8;
+  -webkit-box-shadow: 2px 3px 33px 3px #6d6dffb8;
+  -moz-box-shadow: 2px 3px 33px 3px #6d6dffb8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30px;
+  justify-content: center;
+}
+
+.info-texto4 {
+  font-size: 24px;
+  font-family: 'Font2';
+  margin-top: 30px;
+  color: black;
+  text-decoration: none;
+  font-family: 'Font2';
+  font-weight: 650;
+  margin-right: 100px;
+}
+
+.entrada {
+  display: flex;
+  flex-direction: column;
+  margin-right: 70px;
+}
+
+.Check-in {
+  font-size: 15px;
+  background-color: #9998FF;
+  border-radius: 7px;
+  color: white;
+  font-family: 'Font2';
+  padding: 5px;
+  font-weight: 400;
+  width: 190px;
+}
+
+.data-entrada {
+width: 125px;
+margin-left: 5px;
+
+}
+
+.hora-entrada {
+  width: 60px;
+  margin-left: 5px;
+  
+  
+  }
+
+.linha {
+  display: flex;
+  flex-direction: row;
+}
+
+label {
+  font-size: 15px;
+  font-family: 'Font2';
+  font-weight: 400;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  padding-left: 5px;
+}
+
+input {
+  font-size: 15px;
+  font-family: 'Font2';
+  font-weight: 400;
+  color: black;
+  text-decoration: none;
+  font-family: 'Font2';
+  font-weight: 400;
+  border: none;
+  
+  
+}
+
+.hora {
+  margin-left: 10px;
 }
