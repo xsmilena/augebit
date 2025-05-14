@@ -29,7 +29,7 @@ body {
 
 .saudacao1 {
     margin: 0;
-    padding-left: 15px;
+    padding-left: 30px;
     font-family: 'Font1';
     font-size: 40px;
     font-weight: 100;
@@ -44,7 +44,7 @@ body {
 .saudacao2 {
     margin: 0;
     margin-top: 5px; /* ou 4px, 6px, dependendo do visual desejado */
-    padding-left: 15px;
+    padding-left: 30px;
     font-family: 'Font2';
     font-size: 30px;
     font-weight: 300;
@@ -116,14 +116,14 @@ body {
       .tudo {
         display: flex;
         flex-direction: row;
-        border: solid 2px;
+       
       }
 
       .informacoes {
         display: flex;
         flex-direction: column;
         border: solid 2px;
-        margin-left: 50px;
+        margin-left: 70px;
         margin-top: 30px;
       }
 
@@ -224,7 +224,7 @@ body {
   background-color: white;
   border-radius: 50px;
   width: 440px;
-  height: 270px;
+  height: 280px;
   box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
   -webkit-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
   -moz-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
@@ -274,7 +274,7 @@ button {
 .caixa4 {
   background-color: #9a98ff60;
   border-radius: 50px;
-  width: 270px;
+  width: 280px;
   height: 270px;
   box-shadow: 2px 3px 33px 3px #6d6dffb8;
   -webkit-box-shadow: 2px 3px 33px 3px #6d6dffb8;
@@ -282,10 +282,13 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 30px;
   justify-content: center;
 }
 
+.mais{
+padding-top: -40px;
+font-size: 20px;
+}
 .info-texto4 {
   font-size: 24px;
   font-family: 'Font2';
@@ -294,13 +297,24 @@ button {
   text-decoration: none;
   font-family: 'Font2';
   font-weight: 650;
-  margin-right: 100px;
+  margin-right: 125px;
+}
+
+.info-texto5 {
+  font-size: 24px;
+  font-family: 'Font2';
+  margin-top: 30px;
+  color: black;
+  text-decoration: none;
+  font-family: 'Font2';
+  font-weight: 650;
+  margin-right: 250px;
 }
 
 .entrada {
   display: flex;
   flex-direction: column;
-  margin-right: 70px;
+  margin-right: px;
 }
 
 .Check-in {
@@ -310,13 +324,17 @@ button {
   color: white;
   font-family: 'Font2';
   padding: 5px;
-  font-weight: 400;
+  font-weight: 500;
   width: 190px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .data-entrada {
 width: 125px;
 margin-left: 5px;
+
 
 }
 
@@ -330,7 +348,18 @@ margin-left: 5px;
 .linha {
   display: flex;
   flex-direction: row;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
+
+.linha1 {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+
 
 label {
   font-size: 15px;
@@ -348,8 +377,6 @@ input {
   font-weight: 400;
   color: black;
   text-decoration: none;
-  font-family: 'Font2';
-  font-weight: 400;
   border: none;
   
   
@@ -357,4 +384,35 @@ input {
 
 .hora {
   margin-left: 10px;
+}
+
+.botao-salvar {
+width: 70px;
+height: 20px;
+background-color: #9a98ffae;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 5px;
+margin-left: 20px;
+}
+
+.titulo-salvar {
+  font-size: 13px;
+  font-family: 'Font2';
+  font-weight: 400;
+}
+
+.caixa5 {
+  background-color: white;
+  border-radius: 50px;
+  width: 715px;
+  height: 280px;
+  box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
+  -webkit-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
+  -moz-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30px;
 }
