@@ -14,6 +14,7 @@ body {
     margin-left:  20px;
     margin-right: 20px;
     margin-top: 10px;
+    
 }
 
 .logo {
@@ -122,7 +123,7 @@ body {
       .informacoes {
         display: flex;
         flex-direction: column;
-        border: solid 2px;
+      
         margin-left: 70px;
         margin-top: 30px;
       }
@@ -138,9 +139,9 @@ body {
         border-radius: 50px;
         width: 270px;
         height: 270px;
-        box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
-        -webkit-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
-        -moz-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
+        box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+        -webkit-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+        -moz-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -197,6 +198,7 @@ body {
   text-decoration: none;
   font-family: 'Font2';
   font-weight: 400;
+
 }
 
 .info-texto3 {
@@ -217,6 +219,7 @@ body {
   text-decoration: none;
   font-family: 'Font2';
   font-weight: 400;
+ 
 
 }
 
@@ -225,9 +228,9 @@ body {
   border-radius: 50px;
   width: 440px;
   height: 280px;
-  box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
-  -webkit-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
-  -moz-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
+  box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+-webkit-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+-moz-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -247,19 +250,7 @@ body {
   flex-direction: column;
 }
 
-.caixa3 {
-  background-color: #9a98ff8d;
-  border-radius: 50px;
-  width: 270px;
-  height: 270px;
-  box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
-  -webkit-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
-  -moz-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 30px;
-}
+
 
 button {
   background-color: #6E6CFF;
@@ -276,9 +267,9 @@ button {
   border-radius: 50px;
   width: 280px;
   height: 270px;
-  box-shadow: 2px 3px 33px 3px #6d6dffb8;
-  -webkit-box-shadow: 2px 3px 33px 3px #6d6dffb8;
-  -moz-box-shadow: 2px 3px 33px 3px #6d6dffb8;
+  box-shadow: 2px 5px 19px -1px rgba(110,109,255,0.7);
+-webkit-box-shadow: 2px 5px 19px -1px rgba(110,109,255,0.7);
+-moz-box-shadow: 2px 5px 19px -1px rgba(110,109,255,0.7);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -286,8 +277,7 @@ button {
 }
 
 .mais{
-padding-top: -40px;
-font-size: 20px;
+padding-top: 5px;
 }
 .info-texto4 {
   font-size: 24px;
@@ -314,7 +304,6 @@ font-size: 20px;
 .entrada {
   display: flex;
   flex-direction: column;
-  margin-right: px;
 }
 
 .Check-in {
@@ -339,7 +328,7 @@ margin-left: 5px;
 }
 
 .hora-entrada {
-  width: 60px;
+  width: 70px;
   margin-left: 5px;
   
   
@@ -348,7 +337,6 @@ margin-left: 5px;
 .linha {
   display: flex;
   flex-direction: row;
-  display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
@@ -408,11 +396,69 @@ margin-left: 20px;
   border-radius: 50px;
   width: 715px;
   height: 280px;
-  box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
-  -webkit-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
-  -moz-box-shadow: 2px 3px 33px 3px rgba(153,152,255,0.74);
+  box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+  -webkit-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+  -moz-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-right: 30px;
+}
+
+.caixa6 {
+  background-color: white;
+  border-radius: 35px;
+  width: 375px;
+  height: 130px;
+  box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+  -webkit-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+  -moz-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30px;
+  margin-bottom: 50px;
+}
+
+.part3 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+.info-texto6 {
+  font-size: 24px;
+  font-family: 'Font2';
+  margin-top: 30px;
+  color: black;
+  text-decoration: none;
+  font-family: 'Font2';
+  font-weight: 650;
+  margin-right: 50px;
+}
+
+.tudo1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.perfil {
+  background-image: url(./img/perfil.png);
+        display: flex;
+        align-items: center;
+        margin-left: 40px;
+        border-radius: 40px;
+        margin-top: 260px;
+        width: 65px;
+        height: 68px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.person {
+  background-image: url(./img/person.png);
+  width: 35px;
+  height: 28px;
+  margin-left: 3px
 }
