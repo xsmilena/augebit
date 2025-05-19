@@ -136,14 +136,6 @@ $nomeUsuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Milena';
       </div>
     </div>
   </div>
-
-  <!-- Formulário para alterar o nome -->
-  <form method="POST" action="">
-    <label for="nome">Digite seu nome:</label>
-    <input type="text" name="nome" id="nome" required>
-    <button type="submit">Salvar nome</button>
-  </form>
-
   <!-- Importando o script JS -->
   <script src="./script.js"></script>
 </body>
