@@ -9,13 +9,7 @@
 }
 
 
-body {
-    background-color: #EEEEFF;
-    margin-left:  20px;
-    margin-right: 20px;
-    margin-top: 10px;
-    
-}
+
 
 .logo {
     width: 150px;
@@ -51,10 +45,7 @@ body {
     font-weight: 300;
     }
 
-    body {
-        margin: 0;
-        background: #ecebff;
-      }
+
       
       .sidebar {
         width: 70px;
@@ -258,6 +249,7 @@ table {
   border: none;
   border-collapse: collapse;
   margin-top: 10px;
+    table-layout: fixed; 
 }
 
 thead {
@@ -279,16 +271,17 @@ th {
   td {
   padding: 10px;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
   font-family: 'Font2';
   color: black;
   border: 1px solid #a2a3f7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
 }
 
-tbody tr:nth-child(even) {
-  background-color: #f5f5f5;
-}
+
 
 .foto-icon {
   width: 30px;
@@ -305,8 +298,7 @@ tbody tr:nth-child(even) {
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: white;
+  background-color: #EEEEFF;
   margin: 20px;
 }
 
@@ -423,6 +415,12 @@ input {
   color: #3c3f78;
 }
 
+#cancelarAtualizar {
+  background-color: #c4c7ff;
+  color: #3c3f78;
+  margin-top: 20px;
+}
+
 .close {
   position: absolute;
   top: 10px;
@@ -455,9 +453,18 @@ h2 {
   border: none;
 }
 
+#uploadImagemAtualizar {
+  border: none;
+}
+
 #cancelar {
   margin-top: 20px;
 }
 #salvar {
   margin-top: 20px;
 }
+#atualizar {
+  margin-top: 20px;
+}
+
+

@@ -1,3 +1,7 @@
+<?php
+// Simulação de nome dinâmico (futuramente pode vir do banco de dados ou sessão)
+$nomeUsuario = "Giovanna";
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -5,13 +9,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Augebit</title>
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="comeco">
     <img class="logo" src="./img/augebit.png" alt="">
     <div class="texto">
-      <h1 class="saudacao1">Olá, Giovanna!</h1> <!-- Exibe o nome dinâmico -->
+      <h1 class="saudacao1">Olá, <?php echo htmlspecialchars($nomeUsuario); ?>!</h1>
       <h1 class="saudacao2">Adicione, atualize ou remova dados pessoais sobre os funcionários</h1>
     </div>
   </div>
@@ -49,29 +53,22 @@
         <div class="caixa1">
           <img class="img1" src="./img/man.png" alt="">
           <div class="textinhos">
-            <a class="info-texto" href="">10</a>
+            <a class="info-texto"  id="totalFuncionarios" href="">00</a>
             <a class="info-subtexto" href="">Funcionários <br> Totais</a>
           </div>
         </div>
         <div class="caixa1">
           <img class="img1" src="./img/man.png" alt="">
           <div class="textinhos">
-            <a class="info-texto" href="">05</a>
-            <a class="info-subtexto" href="">Funcionários <br> homens</a>
+            <a class="info-texto" id="homens" href="">00</a>
+            <a class="info-subtexto"  href="">Funcionários <br> homens</a>
           </div>
         </div>
         <div class="caixa1">
           <img class="img1" src="./img/woman.png" alt="">
           <div class="textinhos">
-            <a class="info-texto" href="">05</a>
+            <a class="info-texto"  id="mulheres" href="">00</a>
             <a class="info-subtexto" href="">Funcionárias <br> mulheres</a>
-          </div>
-        </div>
-        <div class="caixa1">
-          <img class="img1" src="./img/okay.png" alt="">
-          <div class="textinhos">
-            <a class="info-texto" href="">08</a>
-            <a class="info-subtexto" href="">Funcionários <br> ativos</a>
           </div>
         </div>
       </div>
@@ -82,12 +79,87 @@
       </div>
         <button id="openModal">+ funcionários</button>
     </div>
+    <div id="modalAtualizar" class="modal">
+      <div class="modal-content">
+        <span class="close" id="fecharAtualizar">&times;</span>
+        <div class="text-foto">
+          <form id="formAtualizarFuncionario">
+            <h2>Atualizar informação</h2>
+        </div>
+        
+            <label>Nome Completo</label>
+            <input class="nome" type="text" name="nome" required>
+    
+            <div class="input-duplo">
+              <div>
+                <label>CPF</label>
+                <input type="text" name="cpf" required>
+              </div>
+              <div>
+                <label>RG</label>
+                <input class="RG" type="text" name="rg" required>
+              </div>
+            </div>
+    
+            <div class="input-duplo">
+              <div>
+                <label>Endereço</label>
+                <input type="text" name="endereco" required>
+              </div>
+              <div>
+                <label>Gênero</label>
+                <input class="genero" type="text" name="genero" required>
+              </div>
+            </div>
+    
+            <div class="input-triplo">
+              <div>
+                <label>E-mail</label>
+                <input type="email" name="email" required>
+              </div>
+              <div>
+                <label>Telefone</label>
+                <input type="text" name="telefone" required>
+              </div>
+              <div>
+                <label>Nascimento</label>
+                <input type="date" name="nascimento" required>
+              </div>
+            </div>
+    
+            <div class="input-triplo">
+              <div>
+                <label>Estado Civil</label>
+                <input type="text" name="estado" required>
+              </div>
+              <div>
+                <label>PIS/PASEP</label>
+                <input type="text" name="PIS/PASEP" required>
+              </div>
+              <div>
+                <label>Carteira de Trabalho</label>
+                <input type="text" name="carteira" required>
+              </div>
+            </div>
+    
+            <div class="botoes">
+              <div class="img-container">
+                <img id="previewImagemAtualizar" class="add" src="./img/add.png" alt="Prévia da foto de perfil">
+                <input type="file"  name="foto id="uploadImagemAtualizar" accept="image/*">
+              </div>
+              <button type="button" id="cancelarAtualizar">CANCELAR</button>
+              <button type="submit" id="atualizar">ATUALIZAR</button>
+            </div>
+          </form>
+      </div>
+    </div>
+    
     
     <div id="modal" class="modal">
       <div class="modal-content">
         <span class="close" id="fecharModal">&times;</span>
         <div class="text-foto">
-        <form id="formFuncionario">
+        <form id="formFuncionario" action="addFuncionario.php" method="POST" enctype="multipart/form-data">
           <h2>Adicionar funcionário</h2>
         </div>
           <label>Nome Completo</label>
@@ -145,7 +217,7 @@
           <div class="botoes">
             <div class="img-container">
               <img id="previewImagem" class="add" src="./img/add.png" alt="Prévia da foto de perfil">
-              <input type="file" id="uploadImagem" accept="image/*">
+              <input name="foto" type="file" id="uploadImagem" accept="image/*">
             </div>
             <button type="button" id="cancelar">CANCELAR</button>
             <button type="submit"id="salvar">SALVAR</button>
@@ -173,25 +245,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Lorem ipsum</td>
-              <td>111.111.111-X</td>
-              <td>11.111.111-X</td>
-              <td>01/01/2001</td>
-              <td>Lorem</td>
-              <td>Lorem ipsum</td>
-              <td>(11) 0000-0000</td>
-              <td>Lorem ipsum</td>
-              <td>Lorem ipsum</td>
-              <td>Lorem ipsum</td>
-              <td>Lorem ipsum</td>
-              <td><img src="./img/perfil.png" alt="Foto" class="foto-icon"></td>
-              <td>
-                <img src="./img/lixeira.png" alt="Excluir" class="icon-acao">
-                <img src="./img/editar.png" alt="Editar" class="icon-acao">
-              </td>
-            </tr>
-            <!-- Repita esse <tr> para mais linhas se quiser -->
+          <?php include 'listarFuncionarios.php'; ?>
           </tbody>
         </table>
       </div>
