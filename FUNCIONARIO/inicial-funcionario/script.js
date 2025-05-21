@@ -1,21 +1,22 @@
-
-document.getElementById("btnEntrada").addEventListener("click", function(event) {
-  event.preventDefault(); // impede envio ou recarregamento da página
-  alert("As informações foram salvas.");
-
-  // Desabilita os campos de entrada
-  document.getElementById("dataEntrada").disabled = true;
-  document.getElementById("horaEntrada").disabled = true;
-  this.disabled = true; // desativa o botão também
-});
-
-document.getElementById("btnSaida").addEventListener("click", function(event) {
-  event.preventDefault(); 
-  alert("As informações foram salvas.");
-
-  // Desabilita os campos de saída
-  document.getElementById("dataSaida").disabled = true;
-  document.getElementById("horaSaida").disabled = true;
-  this.disabled = true;
-});
-
+document.querySelectorAll('.entrada').forEach((entrada) => {
+    const dataInput = entrada.querySelector('input[type="date"]');
+    const horaInput = entrada.querySelector('input[type="time"]');
+    const botaoSalvar = entrada.querySelector('.botao-salvar');
+  
+    botaoSalvar.addEventListener('click', function () {
+      if (dataInput.value && horaInput.value) {
+        alert('Suas informações foram salvas com sucesso!');
+  
+        // Desativa os inputs e o botão
+        dataInput.disabled = true;
+        horaInput.disabled = true;
+        botaoSalvar.disabled = true;
+  
+        botaoSalvar.style.backgroundColor = '#ccc';
+        botaoSalvar.style.cursor = 'not-allowed';
+      } else {
+        alert('Por favor, preencha a data e a hora antes de salvar.');
+      }
+    });
+  });
+  

@@ -1,17 +1,20 @@
 @font-face {
   font-family: 'Font1';
-  src: url('./fonts/eurostile.TTF')
+  src: url('../fonts/eurostile.TTF')
 }
 
 @font-face {
   font-family: 'Font2';
-  src: url('./fonts/Montserrat-VariableFont_wght.ttf')
+  src: url('../fonts/Montserrat-VariableFont_wght.ttf')
 }
+
 
 body {
   background-color: #EEEEFF;
-  margin: 10px 20px 0 20px;
-  font-family: 'Font2', sans-serif;
+  margin-left:  20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  
 }
 
 .logo {
@@ -21,160 +24,441 @@ body {
 
 .comeco {
   display: flex;
-  align-items: center;
-}
-
-.saudacao1, .saudacao2 {
-  padding-left: 30px;
+  flex-direction: row;
+ align-items: center;
 }
 
 .saudacao1 {
   margin: 0;
+  padding-left: 30px;
   font-family: 'Font1';
   font-size: 40px;
   font-weight: 100;
 }
 
+.texto {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+
 .saudacao2 {
-  margin-top: 5px;
+  margin: 0;
+  margin-top: 5px; /* ou 4px, 6px, dependendo do visual desejado */
+  padding-left: 30px;
+  font-family: 'Font2';
   font-size: 30px;
   font-weight: 300;
-}
+  }
 
-.sidebar {
-  width: 70px;
-  background-color: #6c63ff;
-  height: 410px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 30px 0 0 40px;
-  border-radius: 40px;
-}
+  body {
+      margin: 0;
+      background: #ecebff;
+    }
+    
+    .sidebar {
+      width: 70px;
+      background-color: #6c63ff;
+      height: 410px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 40px;
+      border-radius: 40px;
+      margin-top: 30px;
+    }
+    
+    .menu-item {
+      width: 50px;
+      height: 50px;
+      margin: 20px 0;
+      background: none;
+      border: none;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+     
+    }
+    
+    .menu-item .icon {
+      width: 100%;
+      height: 100%;
+      display: block;
+      mask-size: cover;
+      -webkit-mask-size: cover;
+      background-color: white;
+    }
+    
+    /* Exemplo de ícones usando mask (ou pode usar SVG inline) */
+    .icon.home       { mask: url('./img/home.png') no-repeat center; }
+    .icon.notebook   { mask: url('./img/justificativas.png') no-repeat center; }
+    .icon.cap        { mask: url('./img/cursos.png') no-repeat center; }
+    .icon.chart      { mask: url('./img/desempenho.png') no-repeat center; }
+    .icon.phone      { mask: url('./img/solicitacoes.png') no-repeat center; }
+    
+    /* Estado ativo (com "bolinha") */
+    
+    .icon-circle {
+      width: 55px;
+      height: 55px;
+      background-color: #4d47c3; /* roxo escuro */
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+    
+    .icon-circle img {
+      width: 25px;
+      height: 25px;
+    }
 
-.menu-item {
-  width: 50px;
-  height: 50px;
-  margin: 20px 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+    .tudo {
+      display: flex;
+      flex-direction: row;
+     
+    }
 
-.menu-item .icon {
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  mask-size: cover;
-  -webkit-mask-size: cover;
-}
+    .informacoes {
+      display: flex;
+      flex-direction: column;
+    
+      margin-left: 70px;
+      margin-top: 30px;
+    }
 
-.icon.home     { mask: url('./img/home.png') no-repeat center; }
-.icon.docs     { mask: url('./img/justificativas.png') no-repeat center; }
-.icon.chapeu   { mask: url('./img/cursos.png') no-repeat center; }
-.icon.grafico  { mask: url('./img/desempenho.png') no-repeat center; }
-.icon.calendario { mask: url('./img/solicitacoes.png') no-repeat center; }
-.icon.mapa     { mask: url('./img/mapa.png') no-repeat center; }
+    .part1 {
+      display: flex;
+      flex-direction: row;
+  
+    }
 
-.icon-circle {
-  width: 55px;
-  height: 55px;
-  background-color: #4d47c3;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-}
+    .caixa1 {
+      background-color: white;
+      border-radius: 50px;
+      width: 270px;
+      height: 270px;
+      box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+      -webkit-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+      -moz-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 30px;
+  
+    }
 
-.icon-circle img {
-  width: 25px;
-  height: 25px;
-}
-
-.tudo {
-  display: flex;
-}
-
-.informacoes {
-  display: flex;
-  flex-direction: column;
-  margin-left: 70px;
-  margin-top: 30px;
-}
-
-.part1 {
-  display: flex;
-}
-
-.caixa1 {
-  background-color: white;
-  border-radius: 50px;
-  width: 270px;
-  height: 270px;
-  box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 30px;
-}
-
-.img1 {
-  width: 230px;
-  height: 230px;
-}
-
-.textinhos a {
-  text-decoration: none;
-  color: black;
-  font-family: 'Font2';
-}
-
+    .img1 {
+      width: 230px;
+      height: 230px;
+    }
+  
 .info-texto {
-  font-size: 16px;
-  font-weight: 650;
-  margin-top: -15px;
+font-size: 16px;
+font-family: 'Font2';
+margin-top: -15px;
+color: black;
+text-decoration: none;
+font-family: 'Font2';
+font-weight: 650;
 }
 
 .info-subtexto {
-  font-size: 15px;
-  font-weight: 400;
+font-size: 15px;
+font-family: 'Font2';
+font-weight: 400;
+color: black;
+text-decoration: none;
+font-family: 'Font2';
+font-weight: 400;
+}
+
+.img2 {
+width: 190px;
+height: 190px;
+margin-top: 15px;
+}
+
+.info-texto2 {
+font-size: 16px;
+font-family: 'Font2';
+margin-top: 8px;
+color: black;
+text-decoration: none;
+font-family: 'Font2';
+font-weight: 650;
+}
+
+.info-subtexto2 {
+font-size: 15px;
+font-family: 'Font2';
+font-weight: 400;
+color: black;
+text-decoration: none;
+font-family: 'Font2';
+font-weight: 400;
+
+}
+
+.info-texto3 {
+font-size: 16px;
+font-family: 'Font2';
+margin-top: -15px;
+color: black;
+text-decoration: none;
+font-family: 'Font2';
+font-weight: 650;
+}
+
+.info-subtexto3 {
+font-size: 15px;
+font-family: 'Font2';
+font-weight: 400;
+color: black;
+text-decoration: none;
+font-family: 'Font2';
+font-weight: 400;
+
+
+}
+
+.caixa2 {
+background-color: white;
+border-radius: 50px;
+width: 440px;
+height: 280px;
+box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+-webkit-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+-moz-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-right: 30px;
+
 }
 
 .part2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 30px 0;
+display: flex;
+flex-direction: row;
+margin-top: 30px;
+
 }
 
-.pesquisa-barra {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: white;
-  padding: 10px;
-  border-radius: 20px;
-  box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
-}
-
-.pesquisa-barra input {
-  border: none;
-  outline: none;
-  font-size: 16px;
-  font-family: 'Font2';
-}
-
-.funcionarios {
-  background-color: #6c63ff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-family: 'Font2';
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
+.textinhos {
+display: flex;
+flex-direction: column;
 }
 
 
 
+button {
+background-color: #6E6CFF;
+width: 45px;
+height: 45px;
+color: white;
+border-radius: 10px;
+border: none;
+size: 15px;
+}
+
+.caixa4 {
+background-color: #9a98ff60;
+border-radius: 50px;
+width: 280px;
+height: 270px;
+box-shadow: 2px 5px 19px -1px rgba(110,109,255,0.7);
+-webkit-box-shadow: 2px 5px 19px -1px rgba(110,109,255,0.7);
+-moz-box-shadow: 2px 5px 19px -1px rgba(110,109,255,0.7);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.mais{
+padding-top: 5px;
+}
+.info-texto4 {
+font-size: 24px;
+font-family: 'Font2';
+margin-top: 30px;
+color: black;
+text-decoration: none;
+font-family: 'Font2';
+font-weight: 650;
+margin-right: 125px;
+}
+
+.info-texto5 {
+font-size: 24px;
+font-family: 'Font2';
+margin-top: 30px;
+color: black;
+text-decoration: none;
+font-family: 'Font2';
+font-weight: 650;
+margin-right: 250px;
+}
+
+.entrada {
+display: flex;
+flex-direction: column;
+}
+
+.Check-in {
+font-size: 15px;
+background-color: #9998FF;
+border-radius: 7px;
+color: white;
+font-family: 'Font2';
+padding: 5px;
+font-weight: 500;
+width: 190px;
+display: flex;
+align-items: center;
+margin-bottom: 15px;
+}
+
+.data-entrada {
+width: 125px;
+margin-left: 5px;
+
+
+}
+
+.hora-entrada {
+width: 70px;
+margin-left: 5px;
+
+
+}
+
+.linha {
+display: flex;
+flex-direction: row;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.linha1 {
+display: flex;
+flex-direction: row;
+display: flex;
+align-items: center;
+}
+
+
+label {
+font-size: 15px;
+font-family: 'Font2';
+font-weight: 400;
+color: black;
+text-decoration: none;
+font-weight: 00;
+padding-left: 5px;
+}
+
+input {
+font-size: 15px;
+font-family: 'Font2';
+font-weight: 400;
+color: black;
+text-decoration: none;
+border: none;
+
+
+}
+
+.hora {
+margin-left: 10px;
+}
+
+.botao-salvar {
+width: 70px;
+height: 20px;
+background-color: #9a98ffae;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 5px;
+margin-left: 20px;
+}
+
+.titulo-salvar {
+font-size: 13px;
+font-family: 'Font2';
+font-weight: 400;
+}
+
+.caixa5 {
+background-color: white;
+border-radius: 50px;
+width: 715px;
+height: 280px;
+box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+-webkit-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+-moz-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-right: 30px;
+}
+
+.caixa6 {
+background-color: white;
+border-radius: 35px;
+width: 375px;
+height: 130px;
+box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+-webkit-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+-moz-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-right: 30px;
+margin-bottom: 50px;
+}
+
+.part3 {
+display: flex;
+flex-direction: row;
+margin-top: 30px;
+}
+
+.info-texto6 {
+font-size: 24px;
+font-family: 'Font2';
+margin-top: 30px;
+color: black;
+text-decoration: none;
+font-family: 'Font2';
+font-weight: 650;
+margin-right: 50px;
+}
+
+.tudo1 {
+display: flex;
+flex-direction: column;
+}
+
+.perfil {
+background-image: url(./img/perfil.png);
+      display: flex;
+      align-items: center;
+      margin-left: 40px;
+      border-radius: 40px;
+      margin-top: 260px;
+      width: 65px;
+      height: 68px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.person {
+background-image: url(./img/person.png);
+width: 35px;
+height: 28px;
+margin-left: 3px
+}

@@ -193,13 +193,16 @@ body {
   background-color: transparent;
   border: none;
   width: 500px;
-  height: 60px;
+  height: 40px;
   border-radius: 20px;
   display: flex;
   align-items: center;
   padding-left: 20px;
   font-family: 'Font2';
   font-size: 15px;
+  justify-content: center;
+  margin-top: 14px;
+
 }
 
 .pesquisa-barra {
@@ -218,7 +221,8 @@ body {
   -moz-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
   display: flex;
   flex-direction: row;
-
+  justify-content: center;
+  align-items: center;
 }
 
 .funcionarios {
@@ -245,13 +249,15 @@ margin-left: 2px;
 
 table {
   width: 100%;
-  border-collapse: collapse;
   background-color: white;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
   -webkit-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
   -moz-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+  border: none;
+  border-collapse: collapse;
+  margin-top: 10px;
 }
 
 thead {
@@ -260,22 +266,24 @@ thead {
 }
 
 th {
-  padding: 13px;
+  padding: 10px;
   text-align: center;
   font-size: 15px;
   font-weight: 500;
   font-family: 'Font2';
   color: white;
+  border: none;
   
 }
 
   td {
-  padding: 13px;
+  padding: 10px;
   text-align: center;
   font-size: 13px;
   font-family: 'Font2';
   color: black;
-  border: 1px solid #9998FF;
+  border: 1px solid #a2a3f7;
+
 }
 
 tbody tr:nth-child(even) {
@@ -294,4 +302,162 @@ tbody tr:nth-child(even) {
   height: 18px;
   margin: 0 5px;
   cursor: pointer;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: white;
+  margin: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #7A79F0;
+  color: white;
+  cursor: pointer;
+  font-family: 'Font2';
+  font-size: 15px;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  width: 170px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  font-weight: 500;
+  margin-left: 30px;
+}
+
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: #4646d84a;
+}
+
+.modal-content {
+  background: white;
+  width: 60%;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 30px;
+  position: relative;
+  padding-bottom: 50px;
+  height: 80%;
+}
+
+
+.img-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-right: 100px;
+}
+
+.perfil-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+  font-family: 'Font2';
+  font-weight: 500;
+  padding-bottom: 5px;
+  font-size: 15px;
+}
+
+input {
+  width: 95%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #a2a3f7;
+  border-radius: 10px;
+ 
+}
+
+.RG, .genero {
+  width: 97%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #a2a3f7;
+  border-radius: 10px;
+}
+.nome {
+  width: 898px;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #a2a3f7;
+  border-radius: 10px;
+
+}
+.input-duplo, .input-triplo {
+  display: flex;
+  gap: 10px;
+}
+
+.input-duplo div, .input-triplo div {
+  flex: 1;
+}
+
+.botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#cancelar {
+  background-color: #c4c7ff;
+  color: #3c3f78;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+h2 {
+  font-family: 'Font1';
+  font-weight: 400;
+  font-size: 40px;
+  padding-bottom: -20px;
+}
+
+.text-foto {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.add {
+  width: 110px;
+  height: 100px;
+}
+
+#uploadImagem {
+  border: none;
+}
+
+#cancelar {
+  margin-top: 20px;
+}
+#salvar {
+  margin-top: 20px;
 }
