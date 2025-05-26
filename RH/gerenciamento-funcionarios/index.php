@@ -10,7 +10,7 @@ $usuario = "Giovanna";
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Augebit</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="comeco">
@@ -79,6 +79,9 @@ $usuario = "Giovanna";
           <input id="inputPesquisar" class="pesquisa" type="text" placeholder="Pesquise pelo primeiro nome do funcionário">
         </div>
         <button id="openModal">+ funcionários</button>
+        <button>
+        <a class="prosseguir" href="">prosseguir</a>
+        </button>
       </div>
       <div id="modalAtualizar" class="modal">
         <div class="modal-content">
