@@ -1,7 +1,8 @@
 <?php
-// Simulação de nome dinâmico (futuramente pode vir do banco de dados ou sessão)
-$nomeUsuario = "Giovanna";
+include '../../conexao.php'; // ajusta o caminho conforme sua estrutura
+$usuario = "Giovanna";
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,7 +16,7 @@ $nomeUsuario = "Giovanna";
   <div class="comeco">
     <img class="logo" src="./img/augebit.png" alt="">
     <div class="texto">
-      <h1 class="saudacao1">Olá, <?php echo htmlspecialchars($nomeUsuario); ?>!</h1>
+      <h1 class="saudacao1">Olá, <?php echo $usuario; ?>!</h1> <!-- Exibe o nome dinâmico -->
       <h1 class="saudacao2">Adicione, atualize ou remova dados pessoais sobre os funcionários</h1>
     </div>
   </div>
@@ -53,7 +54,7 @@ $nomeUsuario = "Giovanna";
         <div class="caixa1">
           <img class="img1" src="./img/man.png" alt="">
           <div class="textinhos">
-            <a class="info-texto"  id="totalFuncionarios" href="">00</a>
+            <a class="info-texto" id="totalFuncionarios" href="">00</a>
             <a class="info-subtexto" href="">Funcionários <br> Totais</a>
           </div>
         </div>
@@ -61,170 +62,168 @@ $nomeUsuario = "Giovanna";
           <img class="img1" src="./img/man.png" alt="">
           <div class="textinhos">
             <a class="info-texto" id="homens" href="">00</a>
-            <a class="info-subtexto"  href="">Funcionários <br> homens</a>
+            <a class="info-subtexto" href="">Funcionários <br> homens</a>
           </div>
         </div>
         <div class="caixa1">
           <img class="img1" src="./img/woman.png" alt="">
           <div class="textinhos">
-            <a class="info-texto"  id="mulheres" href="">00</a>
+            <a class="info-texto" id="mulheres" href="">00</a>
             <a class="info-subtexto" href="">Funcionárias <br> mulheres</a>
           </div>
         </div>
       </div>
       <div class="part2">
         <div class="pesquisa-barra">
-        <img src="./img/lupa.png" alt="">
-        <input class="pesquisa"type="text" placeholder="Pesquise por funcionário">
-      </div>
+          <img src="./img/lupa.png" alt="">
+          <input id="inputPesquisar" class="pesquisa" type="text" placeholder="Pesquise pelo primeiro nome do funcionário">
+        </div>
         <button id="openModal">+ funcionários</button>
-    </div>
-    <div id="modalAtualizar" class="modal">
-      <div class="modal-content">
-        <span class="close" id="fecharAtualizar">&times;</span>
-        <div class="text-foto">
-          <form id="formAtualizarFuncionario">
-            <h2>Atualizar informação</h2>
-        </div>
-        
-            <label>Nome Completo</label>
-            <input class="nome" type="text" name="nome" required>
-    
-            <div class="input-duplo">
-              <div>
-                <label>CPF</label>
-                <input type="text" name="cpf" required>
-              </div>
-              <div>
-                <label>RG</label>
-                <input class="RG" type="text" name="rg" required>
-              </div>
-            </div>
-    
-            <div class="input-duplo">
-              <div>
-                <label>Endereço</label>
-                <input type="text" name="endereco" required>
-              </div>
-              <div>
-                <label>Gênero</label>
-                <input class="genero" type="text" name="genero" required>
-              </div>
-            </div>
-    
-            <div class="input-triplo">
-              <div>
-                <label>E-mail</label>
-                <input type="email" name="email" required>
-              </div>
-              <div>
-                <label>Telefone</label>
-                <input type="text" name="telefone" required>
-              </div>
-              <div>
-                <label>Nascimento</label>
-                <input type="date" name="nascimento" required>
-              </div>
-            </div>
-    
-            <div class="input-triplo">
-              <div>
-                <label>Estado Civil</label>
-                <input type="text" name="estado" required>
-              </div>
-              <div>
-                <label>PIS/PASEP</label>
-                <input type="text" name="PIS/PASEP" required>
-              </div>
-              <div>
-                <label>Carteira de Trabalho</label>
-                <input type="text" name="carteira" required>
-              </div>
-            </div>
-    
-            <div class="botoes">
-              <div class="img-container">
-                <img id="previewImagemAtualizar" class="add" src="./img/add.png" alt="Prévia da foto de perfil">
-                <input type="file"  name="foto id="uploadImagemAtualizar" accept="image/*">
-              </div>
-              <button type="button" id="cancelarAtualizar">CANCELAR</button>
-              <button type="submit" id="atualizar">ATUALIZAR</button>
-            </div>
-          </form>
       </div>
-    </div>
-    
-    
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="close" id="fecharModal">&times;</span>
-        <div class="text-foto">
-        <form id="formFuncionario" action="addFuncionario.php" method="POST" enctype="multipart/form-data">
-          <h2>Adicionar funcionário</h2>
+      <div id="modalAtualizar" class="modal">
+        <div class="modal-content">
+          <span class="close" id="fecharAtualizar">&times;</span>
+          <div class="text-foto">
+            <form id="formAtualizarFuncionario">
+              <h2>Atualizar informação</h2>
+          </div>
+              <label>Nome Completo</label>
+              <input class="nome" type="text" name="nome" required>
+
+              <div class="input-duplo">
+                <div>
+                  <label>CPF</label>
+                  <input type="text" name="cpf" required>
+                </div>
+                <div>
+                  <label>RG</label>
+                  <input class="RG" type="text" name="rg" required>
+                </div>
+              </div>
+
+              <div class="input-duplo">
+                <div>
+                  <label>Endereço</label>
+                  <input type="text" name="endereco" required>
+                </div>
+                <div>
+                  <label>Gênero</label>
+                  <input class="genero" type="text" name="genero" required>
+                </div>
+              </div>
+
+              <div class="input-triplo">
+                <div>
+                  <label>E-mail</label>
+                  <input type="email" name="email" required>
+                </div>
+                <div>
+                  <label>Telefone</label>
+                  <input type="text" name="telefone" required>
+                </div>
+                <div>
+                  <label>Nascimento</label>
+                  <input type="date" name="nascimento" required>
+                </div>
+              </div>
+
+              <div class="input-triplo">
+                <div>
+                  <label>Estado Civil</label>
+                  <input type="text" name="estado" required>
+                </div>
+                <div>
+                  <label>PIS/PASEP</label>
+                  <input type="text" name="pis_pasep" required>
+                </div>
+                <div>
+                  <label>Carteira de Trabalho</label>
+                  <input type="text" name="carteira" required>
+                </div>
+              </div>
+
+              <div class="botoes">
+                <div class="img-container">
+                  <img id="previewImagemAtualizar" class="add" src="./img/add.png" alt="Prévia da foto de perfil">
+                  <input type="file" id="uploadImagemAtualizar" accept="image/*" name="foto">
+                </div>
+                <button type="button" id="cancelarAtualizar">CANCELAR</button>
+                <button type="submit" id="atualizar">ATUALIZAR</button>
+              </div>
+            </form>
         </div>
-          <label>Nome Completo</label>
-          <input class="nome" type="text" name="nome" required>
-    
-          <div class="input-duplo">
-            <div>
-              <label>CPF</label>
-              <input type="text" name="cpf" required>
-            </div>
-            <div>
-              <label>RG</label>
-              <input class="RG" type="text" name="rg" required>
-            </div>
-          </div>
-          <div class="input-duplo">
-            <div>
-              <label>Endereço</label>
-              <input type="text" name="endereco" required>
-            </div>
-            <div>
-              <label>Gênero</label>
-              <input class="genero" type="text" name="genero" required>
-            </div>
-          </div>
-          <div class="input-triplo">
-            <div>
-              <label>E-mail</label>
-              <input type="email" name="email" required>
-            </div>
-            <div>
-              <label>Telefone</label>
-              <input type="text" name="telefone" required>
-            </div>
-            <div>
-              <label>Nascimento</label>
-              <input type="date" name="nascimento" required>
-            </div>
-          </div>
-          <div class="input-triplo">
-            <div>
-              <label>Estado Civil</label>
-              <input type="text" name="estado" required>
-            </div>
-            <div>
-              <label>PIS/PASEP</label>
-              <input type="text" name="PIS/PASEP" required>
-            </div>
-            <div>
-              <label>Carteira de Trabalho</label>
-              <input type="text" name="carteira" required>
-            </div>
-          </div>
-    
-          <div class="botoes">
-            <div class="img-container">
-              <img id="previewImagem" class="add" src="./img/add.png" alt="Prévia da foto de perfil">
-              <input name="foto" type="file" id="uploadImagem" accept="image/*">
-            </div>
-            <button type="button" id="cancelar">CANCELAR</button>
-            <button type="submit"id="salvar">SALVAR</button>
-          </div>
-        </form>
       </div>
-    </div>
+
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close" id="fecharModal">&times;</span>
+          <div class="text-foto">
+          <form id="formFuncionario" action="gerenciarFuncionarios.php" method="POST" enctype="multipart/form-data">
+              <h2>Adicionar funcionário</h2>
+          </div>
+              <label>Nome Completo</label>
+              <input class="nome" type="text" name="nome" required>
+
+              <div class="input-duplo">
+                <div>
+                  <label>CPF</label>
+                  <input type="text" name="cpf" required>
+                </div>
+                <div>
+                  <label>RG</label>
+                  <input class="RG" type="text" name="rg" required>
+                </div>
+              </div>
+              <div class="input-duplo">
+                <div>
+                  <label>Endereço</label>
+                  <input type="text" name="endereco" required>
+                </div>
+                <div>
+                  <label>Gênero</label>
+                  <input class="genero" type="text" name="genero" required>
+                </div>
+              </div>
+              <div class="input-triplo">
+                <div>
+                  <label>E-mail</label>
+                  <input type="email" name="email" required>
+                </div>
+                <div>
+                  <label>Telefone</label>
+                  <input type="text" name="telefone" required>
+                </div>
+                <div>
+                  <label>Nascimento</label>
+                  <input type="date" name="nascimento" required>
+                </div>
+              </div>
+              <div class="input-triplo">
+                <div>
+                  <label>Estado Civil</label>
+                  <input type="text" name="estado" required>
+                </div>
+                <div>
+                  <label>PIS/PASEP</label>
+                  <input type="text" name="pis_pasep" required>
+                </div>
+                <div>
+                  <label>Carteira de Trabalho</label>
+                  <input type="text" name="carteira" required>
+                </div>
+              </div>
+
+              <div class="botoes">
+                <div class="img-container">
+                  <img id="previewImagem" class="add" src="./img/add.png" alt="Prévia da foto de perfil">
+                  <input type="file" id="uploadImagem" accept="image/*" name="foto">
+                </div>
+                <button type="button" id="cancelar">CANCELAR</button>
+                <button type="submit" id="salvar">SALVAR</button>
+              </div>
+            </form>
+        </div>
+      </div>
       <div class="part3">
         <table id="tabelaFuncionarios">
           <thead>
@@ -245,13 +244,12 @@ $nomeUsuario = "Giovanna";
             </tr>
           </thead>
           <tbody>
-          <?php include 'listarFuncionarios.php'; ?>
+            
           </tbody>
         </table>
       </div>
-        </div>
-        <script src="script.js"></script>
+    </div>
+  </div>
+  <script src="script2.js"></script>
 </body>
 </html>
-
-  
