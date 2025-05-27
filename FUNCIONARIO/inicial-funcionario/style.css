@@ -119,8 +119,7 @@ body {
     .informacoes {
       display: flex;
       flex-direction: column;
-    
-      margin-left: 30px;
+      margin-left: 70px;
       margin-top: 30px;
     }
 
@@ -439,7 +438,7 @@ flex-direction: column;
 }
 
 .perfil {
-background-image: url(./img/perfil.png);
+background-image: url(./img/bola.png);
       display: flex;
       align-items: center;
       margin-left: 40px;

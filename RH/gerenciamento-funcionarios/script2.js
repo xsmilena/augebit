@@ -223,7 +223,53 @@ inputPesquisar.addEventListener('input', () => {
     const textoLinha = linha.textContent.toLowerCase();
     linha.style.display = textoLinha.includes(filtro) ? '' : 'none';
   });
+
+
 });
 
 // --- Atualiza os contadores ao carregar a página ---
-window.addEventListener('load', atualizarContadores);
+function carregarFuncionarios() {
+  fetch('listarFuncionarios.php')
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        const tabela = document.getElementById('tabelaFuncionarios').querySelector('tbody');
+        tabela.innerHTML = ''; // Limpa tabela antes de preencher
+        data.funcionarios.forEach(f => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${f.nome}</td>
+            <td>${f.cpf}</td>
+            <td>${f.rg}</td>
+            <td>${f.nascimento}</td>
+            <td>${f.genero}</td>
+            <td>${f.endereco}</td>
+            <td>${f.telefone}</td>
+            <td>${f.email}</td>
+            <td>${f.estado}</td>
+            <td>${f.pis_pasep}</td>
+            <td>${f.carteira}</td>
+            <td>
+              ${f.foto ? `<img src="uploads/${f.foto}" alt="Foto" style="width:40px; height:40px; object-fit:cover; border-radius: 50%;">` : ''}
+            </td>
+            <td style="text-align:center;">
+              <img src="img/editar.png" alt="Editar" class="editar" style="width:20px; cursor:pointer; margin-right:8px;">
+              <img src="img/lixeira.png" alt="Remover" class="remover" style="width:20px; cursor:pointer;">
+            </td>
+          `;
+          tabela.appendChild(tr);
+        });
+
+        atualizarContadores();
+      } else {
+        console.error('Erro ao carregar funcionários');
+      }
+    })
+    .catch(err => console.error('Erro na requisição listarFuncionarios:', err));
+}
+
+window.addEventListener('load', () => {
+  carregarFuncionarios();
+  atualizarContadores();  // Pode deixar só o carregarFuncionarios chamar essa função após carregar dados
+});
+

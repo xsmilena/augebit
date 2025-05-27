@@ -79,9 +79,6 @@ $usuario = "Giovanna";
           <input id="inputPesquisar" class="pesquisa" type="text" placeholder="Pesquise pelo primeiro nome do funcionário">
         </div>
         <button id="openModal">+ funcionários</button>
-        <button>
-        <a class="prosseguir" href="">prosseguir</a>
-        </button>
       </div>
       <div id="modalAtualizar" class="modal">
         <div class="modal-content">
@@ -253,6 +250,7 @@ $usuario = "Giovanna";
       </div>
     </div>
   </div>
+  <a class="prosseguir" href="pagina-destino.php">prosseguir ❯</a>
   <script src="script2.js"></script>
 </body>
 </html>
