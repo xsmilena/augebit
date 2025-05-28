@@ -92,7 +92,7 @@
       
       .icon-circle {
         width: 55px;
-        height: 80px;
+        height: 60px;
         background-color: #4d47c3; /* roxo escuro */
         border-radius: 50%;
         display: flex;
@@ -299,6 +299,8 @@ th {
 body {
   background-color: #EEEEFF;
   margin: 20px;
+
+
 }
 
 button {
@@ -322,11 +324,21 @@ button {
   text-decoration: none;
 }
 
-.prosseguir {
+.botoes-navegacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px -20px 0 0px; /* margem para afastar da borda e da tabela */
+}
+
+html, body {
+  height: 100%;
+}
+
+
+/* Já está definido, mas aqui por clareza */
+.voltar, .prosseguir {
   color: #6c63ff;
-display: flex;
-margin-left: 1300px;
-  padding: 10px 20px;
   width: 160px;
   height: 40px;
   text-decoration: none;
@@ -334,7 +346,17 @@ margin-left: 1300px;
   font-family: 'Font1';
   font-weight: 600;
   font-size: 20px;
-  margin-top: -50px;
+  text-align: center;
+  margin-top: -160px;
+}
+
+/* Remova o margin-left da classe .prosseguir */
+.voltar {
+  margin-left: 1200px;
+}
+
+.prosseguir {
+  margin-right: 90px;
 }
 
 
@@ -423,7 +445,7 @@ input {
   border-radius: 10px;
 }
 .nome {
-  width: 898px;
+  width: 895px;
   padding: 8px;
   margin-bottom: 12px;
   border: 1px solid #a2a3f7;
@@ -501,5 +523,22 @@ h2 {
 }
 #atualizar {
   margin-top: 20px;
+}
+
+.sindicato {
+  width: 895px;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #a2a3f7;
+  border-radius: 10px;
+
+}
+
+.setor {
+  width: 508px;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #a2a3f7;
+  border-radius: 10px;
 }
 

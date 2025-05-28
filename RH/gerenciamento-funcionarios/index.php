@@ -41,9 +41,6 @@ $usuario = "Giovanna";
         <a href="" class="menu-item">
           <span class="icon calendario"></span>
         </a>
-        <a href="" class="menu-item">
-          <span class="icon mapa"></span>
-        </a>
       </div>
       <div class="perfil">
         <a class="person" href=""></a>
@@ -159,6 +156,7 @@ $usuario = "Giovanna";
           <span class="close" id="fecharModal">&times;</span>
           <div class="text-foto">
           <form id="formFuncionario" action="gerenciarFuncionarios.php" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="tipo_form" value="funcionario">
               <h2>Adicionar funcionário</h2>
           </div>
               <label>Nome Completo</label>
@@ -250,7 +248,7 @@ $usuario = "Giovanna";
       </div>
     </div>
   </div>
-  <a class="prosseguir" href="pagina-destino.php">prosseguir ❯</a>
+  <a class="prosseguir" href="../profissional-funcionarios/index.php">prosseguir ❯</a>
   <script src="script2.js"></script>
 </body>
 </html>
