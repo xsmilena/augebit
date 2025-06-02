@@ -1,9 +1,6 @@
 <?php
 include '../../conexao.php';
 
-file_put_contents('log_debug.txt', "Nome recebido: " . $_POST['nome'] . PHP_EOL, FILE_APPEND);
-
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verifica se o nome foi enviado
     if (!isset($_POST['nome']) || empty(trim($_POST['nome']))) {
@@ -24,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query->close();
         exit;
     }
+    
     $query->close();
 
     // Realiza o DELETE

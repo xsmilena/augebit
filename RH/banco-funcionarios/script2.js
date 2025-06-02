@@ -36,10 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
   atualizarContadores();
 
   // Atualiza novamente após envio do formulário (opcional)
-  const form = document.getElementById("formDadosFuncionais");
-  form.addEventListener("submit", () => {
-    setTimeout(atualizarContadores, 1000); // espera o PHP processar
-  });
 });
 
 // --- Envio do formulário de cadastro ---
