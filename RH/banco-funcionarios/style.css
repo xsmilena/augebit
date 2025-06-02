@@ -299,6 +299,8 @@ th {
 body {
   background-color: #EEEEFF;
   margin: 20px;
+
+
 }
 
 button {
@@ -322,20 +324,20 @@ button {
   text-decoration: none;
 }
 
-.prosseguir {
-  color: #6c63ff;
-display: flex;
-margin-left: 1300px;
-  padding: 10px 20px;
-  width: 160px;
-  height: 40px;
-  text-decoration: none;
-  border-radius: 20px;
-  font-family: 'Font1';
-  font-weight: 600;
-  font-size: 20px;
-  margin-top: -50px;
+.botoes-navegacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px -20px 0 0px; /* margem para afastar da borda e da tabela */
 }
+
+html, body {
+  height: 100%;
+}
+
+
+/* Já está definido, mas aqui por clareza */
+
 
 
 
@@ -407,7 +409,7 @@ label {
 }
 
 input {
-  width: 95%;
+  width: 98%;
   padding: 8px;
   margin-bottom: 12px;
   border: 1px solid #a2a3f7;
@@ -423,7 +425,7 @@ input {
   border-radius: 10px;
 }
 .nome {
-  width: 898px;
+  width: 895px;
   padding: 8px;
   margin-bottom: 12px;
   border: 1px solid #a2a3f7;
@@ -471,6 +473,8 @@ h2 {
   font-size: 40px;
   padding-bottom: -20px;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .text-foto {
@@ -504,3 +508,35 @@ h2 {
   margin-top: 20px;
 }
 
+.sindicato {
+  width: 895px;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #a2a3f7;
+  border-radius: 10px;
+
+}
+
+.setor {
+  width: 508px;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #a2a3f7;
+  border-radius: 10px;
+}
+
+
+.voltar {
+  color: #6c63ff;
+display: flex;
+margin-left: 1300px;
+  padding: 10px 20px;
+  width: 160px;
+  height: 40px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-family: 'Font1';
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: -50px;
+}

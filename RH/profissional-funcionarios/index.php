@@ -223,7 +223,7 @@ $usuario = "Giovanna";
   </div>
   <div class="botoes-navegacao">
   <a class="voltar" href="../gerenciamento-funcionarios/index.php">❮ voltar ou</a>
-  <a class="prosseguir" href="pagina-destino.php">prosseguir ❯</a>
+  <a class="prosseguir" href="../banco-funcionarios/index.php">prosseguir ❯</a>
 </div>
   <script src="script2.js"></script>
 </body>

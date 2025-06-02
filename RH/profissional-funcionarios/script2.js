@@ -58,7 +58,7 @@ formFuncionario.addEventListener('submit', function(event) {
   .then(response => response.json())
   .then(data => {
     if (data.success) {
-      const f = data.funcionario;
+      const f = data.profissional;
 
       const tr = document.createElement('tr');
       tr.innerHTML = `
@@ -153,6 +153,7 @@ formAtualizarFuncionario.addEventListener('submit', function(event) {
   .then(data => {
     console.log("Resposta do PHP:", data);
     if (data.success) {
+    const f = data.profissional; 
 
       linhaEditando.cells[0].textContent = f.nome;
       linhaEditando.cells[1].textContent = f.cargo;
@@ -231,7 +232,7 @@ function carregarFuncionarios() {
     .then(data => {
       if (data.success) {
         tabela.innerHTML = ''; // Limpa tabela antes de preencher
-        data.funcionarios.forEach(f => {
+        data.profissional.forEach(f => {
           const tr = document.createElement('tr');
           tr.innerHTML = `
             <td>${f.nome}</td>

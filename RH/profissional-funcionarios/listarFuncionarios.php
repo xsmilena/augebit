@@ -3,21 +3,21 @@ include '../../conexao.php';
 
 header('Content-Type: application/json');
 
-// Atualize os campos abaixo para refletirem a nova estrutura da tabela
-$sql = "SELECT nome, cargo, setor, horario_entrada, horario_saida, tipo_contrato, data_admissao, salario, sindicato FROM funcionarios";
+// Consulta na tabela profissional com os campos informados
+$sql = "SELECT nome, cargo, setor, horario_entrada, horario_saida, tipo_contrato, data_admissao, salario, sindicato FROM profissional";
 $result = $conn->query($sql);
 
-$funcionarios = [];
+$profissional = [];
 
 if ($result) {
     while ($row = $result->fetch_assoc()) {
-        $funcionarios[] = $row;
+        $profissional[] = $row;
     }
 }
 
 echo json_encode([
     'success' => true,
-    'funcionarios' => $funcionarios
+    'profissional' => $profissional
 ]);
 
 $conn->close();

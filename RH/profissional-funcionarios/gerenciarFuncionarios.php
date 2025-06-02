@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Content-Type: application/json');
         echo json_encode([
             'success' => true,
-            'funcionario' => [
+            'profissional' => [
                 'nome' => $nome,
                 'cargo' => $cargo,
                 'setor' => $setor,

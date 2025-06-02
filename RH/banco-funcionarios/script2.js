@@ -1,14 +1,3 @@
-// --- Função para atualizar os contadores (total, homens, mulheres) ---
-function atualizarContadores() {
-  fetch('contagemFuncionarios.php')
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('totalFuncionarios').textContent = data.total.toString().padStart(2, '0');
-      document.getElementById('homens').textContent = data.homens.toString().padStart(2, '0');
-      document.getElementById('mulheres').textContent = data.mulheres.toString().padStart(2, '0');
-    })
-    .catch(error => console.error('Erro ao buscar contagem:', error));
-}
 
 // --- Abertura e fechamento dos modais ---
 const btnAbrirModal = document.getElementById('openModal');
@@ -29,6 +18,30 @@ window.addEventListener('click', (event) => {
   }
 });
 
+function atualizarContadores() {
+  fetch("contarGeneros.php")
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("homens").textContent = data.homens.toString().padStart(2, '0');
+      document.getElementById("mulheres").textContent = data.mulheres.toString().padStart(2, '0');
+      document.getElementById("totalFuncionarios").textContent = data.total.toString().padStart(2, '0');
+    })
+    .catch(error => {
+      console.error("Erro ao buscar contadores:", error);
+    });
+}
+
+// Chama ao carregar a página
+document.addEventListener("DOMContentLoaded", () => {
+  atualizarContadores();
+
+  // Atualiza novamente após envio do formulário (opcional)
+  const form = document.getElementById("formDadosFuncionais");
+  form.addEventListener("submit", () => {
+    setTimeout(atualizarContadores, 1000); // espera o PHP processar
+  });
+});
+
 // --- Envio do formulário de cadastro ---
 const formFuncionario = document.getElementById('formFuncionario');
 const tabela = document.getElementById('tabelaFuncionarios').querySelector('tbody');
@@ -45,24 +58,15 @@ formFuncionario.addEventListener('submit', function(event) {
   .then(response => response.json())
   .then(data => {
     if (data.success) {
-      const f = data.funcionario;
+      const f = data.dados_bancarios;
 
       const tr = document.createElement('tr');
       tr.innerHTML = `
         <td>${f.nome}</td>
-        <td>${f.cpf}</td>
-        <td>${f.rg}</td>
-        <td>${f.nascimento}</td>
-        <td>${f.genero}</td>
-        <td>${f.endereco}</td>
-        <td>${f.telefone}</td>
-        <td>${f.email}</td>
-        <td>${f.estado}</td>
-        <td>${f.pis_pasep}</td>
-        <td>${f.carteira}</td>
-        <td>
-          ${f.foto ? `<img src="uploads/${f.foto}" alt="Foto" style="width:40px; height:40px; object-fit:cover; border-radius: 50%;">` : ''}
-        </td>
+        <td>${f.banco}</td>
+        <td>${f.agencia}</td>
+        <td>${f.tipo_corrente_poupanca}</td>
+        <td>${f.tipo_conta}</td>
         <td style="text-align:center;">
           <img src="img/editar.png" alt="Editar" class="editar" style="width:20px; cursor:pointer; margin-right:8px;">
           <img src="img/lixeira.png" alt="Remover" class="remover" style="width:20px; cursor:pointer;">
@@ -94,7 +98,6 @@ btnCancelarCadastro.addEventListener('click', () => {
   modal.style.display = 'none';
 });
 
-
 let linhaEditando = null;
 
 tabela.addEventListener('click', (event) => {
@@ -103,20 +106,10 @@ tabela.addEventListener('click', (event) => {
     const celulas = linhaEditando.querySelectorAll('td');
 
     formAtualizarFuncionario.nome.value = celulas[0].textContent.trim();
-    formAtualizarFuncionario.cpf.value = celulas[1].textContent.trim();
-    formAtualizarFuncionario.rg.value = celulas[2].textContent.trim();
-    formAtualizarFuncionario.nascimento.value = celulas[3].textContent.trim();
-    formAtualizarFuncionario.genero.value = celulas[4].textContent.trim();
-    formAtualizarFuncionario.endereco.value = celulas[5].textContent.trim();
-    formAtualizarFuncionario.telefone.value = celulas[6].textContent.trim();
-    formAtualizarFuncionario.email.value = celulas[7].textContent.trim();
-    formAtualizarFuncionario.estado.value = celulas[8].textContent.trim();
-    formAtualizarFuncionario.pis_pasep.value = celulas[9].textContent.trim();
-    formAtualizarFuncionario.carteira.value = celulas[10].textContent.trim();
-
-    const imgTd = celulas[11];
-    const imgElem = imgTd.querySelector('img');
-    document.getElementById('previewImagemAtualizar').src = imgElem ? imgElem.src : './img/add.png';
+    formAtualizarFuncionario.banco.value = celulas[1].textContent.trim();
+    formAtualizarFuncionario.agencia.value = celulas[2].textContent.trim();
+    formAtualizarFuncionario.tipo_corrente_poupanca.value = celulas[3].textContent.trim();
+    formAtualizarFuncionario.tipo_conta.value = celulas[4].textContent.trim();
 
     modalAtualizar.style.display = 'block';
   }
@@ -150,21 +143,15 @@ formAtualizarFuncionario.addEventListener('submit', function(event) {
   })
   .then(response => response.json())
   .then(data => {
+    console.log("Resposta do PHP:", data);
     if (data.success) {
-      const f = data.funcionario;
+    const f = data.dados_bancarios; 
 
       linhaEditando.cells[0].textContent = f.nome;
-      linhaEditando.cells[1].textContent = f.cpf;
-      linhaEditando.cells[2].textContent = f.rg;
-      linhaEditando.cells[3].textContent = f.nascimento;
-      linhaEditando.cells[4].textContent = f.genero;
-      linhaEditando.cells[5].textContent = f.endereco;
-      linhaEditando.cells[6].textContent = f.telefone;
-      linhaEditando.cells[7].textContent = f.email;
-      linhaEditando.cells[8].textContent = f.estado;
-      linhaEditando.cells[9].textContent = f.pis_pasep;
-      linhaEditando.cells[10].textContent = f.carteira;
-      linhaEditando.cells[11].innerHTML = f.foto ? `<img src="uploads/${f.foto}" alt="Foto" style="width:40px; height:40px; object-fit:cover; border-radius: 50%;">` : '';
+      linhaEditando.cells[1].textContent = f.banco;
+      linhaEditando.cells[2].textContent = f.agencia;
+      linhaEditando.cells[3].textContent = f.tipo_corrente_poupanca;
+      linhaEditando.cells[4].textContent = f.tipo_conta;
 
       modalAtualizar.style.display = 'none';
       formAtualizarFuncionario.reset();
@@ -184,15 +171,17 @@ formAtualizarFuncionario.addEventListener('submit', function(event) {
 tabela.addEventListener('click', (event) => {
   if (event.target.classList.contains('remover')) {
     const linha = event.target.closest('tr');
-    const cpf = linha.cells[1].textContent.trim();
+    // Para remover, vamos usar o nome completo como identificador, mas idealmente deveria ser um ID único.
+    const nome = linha.cells[0].textContent.trim();
+    console.log('Nome enviado:', nome);
 
-    if (confirm(`Confirma exclusão do funcionário com CPF ${cpf}?`)) {
+    if (confirm(`Confirma exclusão do funcionário ${nome}?`)) {
       fetch('deletarFuncionario.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: `cpf=${encodeURIComponent(cpf)}`
+        body: `nome=${encodeURIComponent(nome)}`
       })
       .then(res => res.json())
       .then(data => {
@@ -223,8 +212,6 @@ inputPesquisar.addEventListener('input', () => {
     const textoLinha = linha.textContent.toLowerCase();
     linha.style.display = textoLinha.includes(filtro) ? '' : 'none';
   });
-
-
 });
 
 // --- Atualiza os contadores ao carregar a página ---
@@ -233,25 +220,15 @@ function carregarFuncionarios() {
     .then(response => response.json())
     .then(data => {
       if (data.success) {
-        const tabela = document.getElementById('tabelaFuncionarios').querySelector('tbody');
         tabela.innerHTML = ''; // Limpa tabela antes de preencher
-        data.funcionarios.forEach(f => {
+        data.dados_bancarios.forEach(f => {
           const tr = document.createElement('tr');
           tr.innerHTML = `
             <td>${f.nome}</td>
-            <td>${f.cpf}</td>
-            <td>${f.rg}</td>
-            <td>${f.nascimento}</td>
-            <td>${f.genero}</td>
-            <td>${f.endereco}</td>
-            <td>${f.telefone}</td>
-            <td>${f.email}</td>
-            <td>${f.estado}</td>
-            <td>${f.pis_pasep}</td>
-            <td>${f.carteira}</td>
-            <td>
-              ${f.foto ? `<img src="uploads/${f.foto}" alt="Foto" style="width:40px; height:40px; object-fit:cover; border-radius: 50%;">` : ''}
-            </td>
+            <td>${f.banco}</td>
+            <td>${f.agencia}</td>
+            <td>${f.tipo_corrente_poupanca}</td>
+            <td>${f.tipo_conta}</td>
             <td style="text-align:center;">
               <img src="img/editar.png" alt="Editar" class="editar" style="width:20px; cursor:pointer; margin-right:8px;">
               <img src="img/lixeira.png" alt="Remover" class="remover" style="width:20px; cursor:pointer;">
@@ -270,7 +247,6 @@ function carregarFuncionarios() {
 
 window.addEventListener('load', () => {
   carregarFuncionarios();
-  atualizarContadores();  
-  // Pode deixar só o carregarFuncionarios chamar essa função após carregar dados
+  atualizarContadores();  // Pode deixar só o carregarFuncionarios chamar essa função após carregar dados
 });
 

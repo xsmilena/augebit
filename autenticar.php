@@ -53,6 +53,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         echo "Profissional adicionado com sucesso!";
 
+    } elseif (isset($_POST['tipo_form']) && $_POST['tipo_form'] === 'dados_bancarios') {
+        // Dados bancários
+        $nome = $_POST["nome"];
+        $banco = $_POST["banco"];
+        $agencia = $_POST["agencia"];
+        $tipo_corrente_poupanca = $_POST["tipo_corrente_poupanca"];
+        $tipo_conta = $_POST["tipo_conta"];
+
+        $sql = "INSERT INTO dados_bancarios (nome, banco, agencia, tipo_corrente_poupanca, tipo_conta)
+                VALUES (?, ?, ?, ?, ?)";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$nome, $banco, $agencia, $tipo_corrente_poupanca, $tipo_conta]);
+
+        echo "Dados bancários adicionados com sucesso!";
+
     } else {
         echo "Tipo de formulário não identificado.";
     }
