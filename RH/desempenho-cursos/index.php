@@ -1,33 +1,41 @@
+<?php
+include '../../conexao.php'; // ajusta o caminho conforme sua estrutura
+$usuario = "Giovanna";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard de Treinamentos - Formulário Editável</title>
+    <title>Augebit</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo"></div>
-            <div class="header-content">
-                <input type="text" class="header-input" value="Olá, Giovanna!" placeholder="Digite o nome...">
-                <input type="text" class="description-input" value="Acompanhe seu desempenho nos treinamentos complementares" placeholder="Digite a descrição...">
-            </div>
+    <div class="comeco">
+    <img class="logo" src="./img/augebit.png" alt="">
+    <div class="texto">
+      <h1 class="saudacao1">Olá, <?php echo $usuario; ?>!</h1>
+      <h1 class="saudacao2">Adicione, atualize ou remova dados bancários dos funcionários</h1>
+    </div>
         </div>
-
-        <div class="sidebar">
-            <div class="sidebar-icon">🏠</div>
-            <div class="sidebar-icon">🕐</div>
-            <div class="sidebar-icon">😊</div>
-            <div class="sidebar-icon">💬</div>
-            <div class="sidebar-icon">📊</div>
-            <div class="sidebar-icon">📋</div>
-        </div>
-
-        <div class="main-content">
-            <div class="section">
+<div class="tudo">
+    <div class="tudo1">
+      <div class="sidebar">
+        <a href="" class="menu-item"><span class="icon home"></span></a>
+        <div class="icon-circle"><img src="img/people.png" alt="Home icon"></div>
+        <a href="" class="menu-item"><span class="icon docs"></span></a>
+        <a href="" class="menu-item"><span class="icon chapeu"></span></a>
+        <a href="" class="menu-item"><span class="icon grafico"></span></a>
+        <a href="" class="menu-item"><span class="icon calendario"></span></a>
+      </div>
+      <div class="perfil">
+        <a class="person" href=""></a>
+      </div>
+    </div>
+        <div class="informacoes">
                 <input type="text" class="section-title-input" value="Cursos concluídos e seus resultados:" placeholder="Digite o título da seção...">
+                
                 <input type="text" class="course-title-input" value="Design de Equipamentos Industriais" placeholder="Digite o nome do curso...">
                 
                 <div class="completed-section">
@@ -39,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-
+<div class="section">
                     <div class="results-section">
                         <div class="results-table">
                             <div class="table-header">
@@ -76,14 +84,16 @@
                             </div>
                         </div>
                     </div>
+</div>
 
+     <div class="section">
                     <div class="summary-card">
                         <div class="summary-icon">📋</div>
                         <input type="text" class="summary-title-input" value="Resumo de Avaliação" placeholder="Digite o título...">
                         <textarea class="summary-textarea" placeholder="Digite o resumo da avaliação...">Giovanna, você concluiu o curso dentro do prazo, com excelente aproveitamento e participação ativa em todas as atividades. Aplicou rapidamente os conhecimentos no trabalho, desenvolvendo melhorias em equipamentos e aumentando a eficiência. Seu gestor destacou sua evolução técnica e maior iniciativa. Este curso foi extremamente relevante para suas atividades.</textarea>
                     </div>
                 </div>
-            </div>
+</div>
 
             <div class="section">
                 <input type="text" class="section-title-input" value="Cursos atuais:" placeholder="Digite o título da seção...">
@@ -157,91 +167,5 @@
 
             <button class="save-button" onclick="saveData()">💾 Salvar Todas as Alterações</button>
         </div>
-
-        <div class="user-avatar">👤</div>
-    </div>
-
-    <script>
-        // Atualizar o círculo de progresso baseado no input
-        document.addEventListener('DOMContentLoaded', function() {
-            const percentageInput = document.querySelector('.percentage-input');
-            const circleBackground = document.querySelector('.circle-bg');
-            
-            function updateCircle() {
-                const value = parseInt(percentageInput.value) || 0;
-                const degrees = (value / 100) * 360;
-                circleBackground.style.background = `conic-gradient(#6366f1 ${degrees}deg, #e5e7eb ${degrees}deg)`;
-            }
-            
-            percentageInput.addEventListener('input', updateCircle);
-            updateCircle(); // Inicializar
-
-            // Atualizar círculos de progresso dos cursos atuais
-            const progressInputs = document.querySelectorAll('.progress-input');
-            progressInputs.forEach(input => {
-                const circle = input.closest('.course-progress');
-                
-                function updateCourseProgress() {
-                    const value = parseInt(input.value) || 0;
-                    const degrees = (value / 100) * 360;
-                    circle.style.background = `conic-gradient(#6366f1 ${degrees}deg, #e5e7eb ${degrees}deg)`;
-                }
-                
-                input.addEventListener('input', updateCourseProgress);
-                updateCourseProgress(); // Inicializar
-            });
-
-            // Adicionar hover effects nos cards
-            const cards = document.querySelectorAll('.course-card, .pending-card');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px)';
-                    this.style.boxShadow = '0 10px 25px rgba(99, 102, 241, 0.15)';
-                    this.style.transition = 'all 0.3s ease';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = 'none';
-                });
-            });
-
-            // Animação dos ícones da sidebar
-            const sidebarIcons = document.querySelectorAll('.sidebar-icon');
-            sidebarIcons.forEach((icon, index) => {
-                icon.addEventListener('click', function() {
-                    sidebarIcons.forEach(i => i.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-        });
-
-        // Função para salvar dados (simulação)
-        function saveData() {
-            // Coletar todos os valores dos inputs
-            const formData = {
-                nome: document.querySelector('.header-input').value,
-                descricao: document.querySelector('.description-input').value,
-                porcentagem: document.querySelector('.percentage-input').value,
-                criterios: [],
-                resumo: document.querySelector('.summary-textarea').value,
-                cursosAtuais: [],
-                cursosPendentes: []
-            };
-
-            // Coletar critérios da tabela
-            const tableRows = document.querySelectorAll('.table-row');
-            tableRows.forEach(row => {
-                const inputs = row.querySelectorAll('.table-input');
-                if (inputs.length === 2) {
-                    formData.criterios.push({
-                        criterio: inputs[0].value,
-                        resultado: inputs[1].value
-                    });
-                }
-            });
-
-            // Coletar cursos atuais
-            const currentCourses = document.querySelectorAll('.current-courses .course-card');
-            currentCourses.forEach(card => {
-                const progress = card.querySelector('.progress-
+</body>
+</html>

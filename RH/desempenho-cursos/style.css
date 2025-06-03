@@ -1,146 +1,157 @@
+@font-face {
+    font-family: 'Font1';
+    src: url('./fonts/eurostile.TTF')
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+@font-face {
+    font-family: 'Font2';
+    src: url('./fonts/Montserrat-VariableFont_wght.ttf')
+}
+   
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #e8e6ff 0%, #f0f0ff 100%);
-            min-height: 100vh;
-            padding: 20px;
+            background-color: #EEEEFF;
+  margin: 20px;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.logo {
+    width: 150px;
+    height: 150px;
+}
 
-        .header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px;
-        }
+.comeco {
+    display: flex;
+    flex-direction: row;
+   align-items: center;
+    
+            
+}
 
-        .logo {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            position: relative;
-        }
+.saudacao1 {
+    margin: 0;
+    padding-left: 30px;
+    font-family: 'Font1';
+    font-size: 40px;
+    font-weight: 100;
+}
 
-        .logo::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            top: 8px;
-            left: 8px;
-        }
+.texto {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
 
-        .logo::after {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            bottom: 8px;
-            right: 8px;
-        }
+.saudacao2 {
+    margin: 0;
+    margin-top: 5px; /* ou 4px, 6px, dependendo do visual desejado */
+    padding-left: 30px;
+    font-family: 'Font2';
+    font-size: 30px;
+    font-weight: 300;
+    }
 
-        .header-content h1 {
-            font-size: 32px;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 5px;
-        }
 
-        .header-input {
-            background: transparent;
-            border: none;
-            font-size: 32px;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 5px;
-            border: 2px solid transparent;
-            border-radius: 8px;
-            padding: 5px;
-            transition: all 0.3s ease;
-        }
+         
+          .sidebar {
+        width: 70px;
+        background-color: #6c63ff;
+        height: 540px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 40px;
+        border-radius: 40px;
+        margin-top: 30px;
+      }
+      
+      .menu-item {
+        width: 50px;
+        height: 50px;
+        margin: 25px 0;
+        background: none;
+        border: none;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+       
+      }
+      
+      .menu-item .icon {
+        width: 100%;
+        height: 100%;
+        display: block;
+        mask-size: cover;
+        -webkit-mask-size: cover;
+        background-color: white;
+      }
+      
+      /* Exemplo de ícones usando mask (ou pode usar SVG inline) */
+      .icon.home       { mask: url('./img/home.png') no-repeat center; }
+      .icon.people   { mask: url('./img/people.png') no-repeat center; }
+      .icon.docs        { mask: url('./img/docs.png') no-repeat center; }
+      .icon.chapeu    { mask: url('./img/chapeu.png') no-repeat center; }
+      .icon.grafico      { mask: url('./img/grafico.png') no-repeat center; }
+      .icon.calendario     { mask: url('./img/calendario.png') no-repeat center; }
+      .icon.mapa      { mask: url('./img/mapa.png') no-repeat center; }
+      /* Estado ativo (com "bolinha") */
+      
+      .icon-circle {
+        width: 55px;
+        height: 60px;
+        background-color: #4d47c3; /* roxo escuro */
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+      
+      .icon-circle img {
+        width: 25px;
+        height: 25px;
+      }
 
-        .header-input:focus {
-            outline: none;
-            border-color: #6366f1;
-            background: rgba(255, 255, 255, 0.5);
-        }
+      .tudo {
+        display: flex;
+        flex-direction: row;
+       
+      }
 
-        .description-input {
-            background: transparent;
-            border: none;
-            font-size: 16px;
-            color: #6b7280;
-            border: 2px solid transparent;
-            border-radius: 8px;
-            padding: 5px;
-            width: 100%;
-            transition: all 0.3s ease;
-        }
+      .perfil-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
 
-        .description-input:focus {
-            outline: none;
-            border-color: #6366f1;
-            background: rgba(255, 255, 255, 0.5);
-        }
 
-        .sidebar {
-            position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            border-radius: 25px;
-            padding: 20px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
-            z-index: 1000;
-        }
+.perfil {
+background-image: url(./img/bola.png);
+      display: flex;
+      align-items: center;
+      margin-left: 40px;
+      border-radius: 40px;
+      margin-top: 50px;
+      width: 65px;
+      height: 68px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
 
-        .sidebar-icon {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 12px;
-        }
+.person {
+background-image: url(./img/person.png);
+width: 35px;
+height: 28px;
+margin-left: 3px
+}
 
-        .sidebar-icon:first-child {
-            background: rgba(255, 255, 255, 0.2);
-        }
+      .informacoes {
+        display: flex;
+        flex-direction: column;
+        margin-left: 70px;
+        margin-top: 30px;
+      }
 
-        .sidebar-icon:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
-        }
-
-        .main-content {
-            margin-left: 100px;
-        }
 
         .section {
             background: white;
@@ -538,21 +549,6 @@
             flex-shrink: 0;
         }
 
-        .user-avatar {
-            position: fixed;
-            bottom: 30px;
-            left: 45px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-        }
 
         .save-button {
             background: linear-gradient(135deg, #6366f1, #8b5cf6);
