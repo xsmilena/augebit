@@ -2,30 +2,28 @@
 include '../../conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Verifica se o nome foi enviado
-    if (!isset($_POST['nome']) || empty(trim($_POST['nome']))) {
+    if (!isset($_POST['nome']) || empty($_POST['nome'])) {
         echo json_encode(['success' => false, 'error' => 'Nome não fornecido']);
         exit;
     }
 
-    $nome = trim($_POST['nome']);
+    $nome = $_POST['nome'];
 
-    // Verifica se o registro existe
-    $query = $conn->prepare("SELECT * FROM dados_bancarios WHERE nome = ?");
+    // Verificar se o profissional existe
+    $query = $conn->prepare("SELECT * FROM profissional WHERE nome = ?");
     $query->bind_param("s", $nome);
     $query->execute();
     $resultado = $query->get_result();
 
     if ($resultado->num_rows === 0) {
-        echo json_encode(['success' => false, 'error' => 'Registro bancário não encontrado']);
-        $query->close();
+        echo json_encode(['success' => false, 'error' => 'Profissional não encontrado']);
         exit;
     }
-    
+
     $query->close();
 
-    // Realiza o DELETE
-    $sql = "DELETE FROM dados_bancarios WHERE nome = ?";
+    // Apagar o profissional do banco
+    $sql = "DELETE FROM profissional WHERE nome = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $nome);
 
