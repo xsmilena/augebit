@@ -389,7 +389,7 @@ font-weight: 400;
 .caixa5 {
 background-color: white;
 border-radius: 50px;
-width: 715px;
+width: 730px;
 height: 280px;
 box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
 -webkit-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
@@ -456,4 +456,138 @@ background-image: url(./img/person.png);
 width: 35px;
 height: 28px;
 margin-left: 3px
+}
+
+.current-courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.section2 {
+  background: transparent;
+  border-radius: 20px;
+ 
+  margin-bottom: 30px;
+  
+
+}
+
+.course-card1{
+  background-color: white;
+  border-radius: 35px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+-webkit-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+-moz-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+margin-top: 30px;
+}
+
+.course-progress {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 60%, #e5e7eb 60%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.progress-circle {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+  margin-right: 40px;
+}
+
+.progress-input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  width: 40px;
+  
+}
+
+.progress-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+
+.progress-input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  width: 40px;
+  
+}
+
+.progress-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.course-info {
+  flex: 1;
+}
+
+.course-name-input {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 5px;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 6px;
+  width: 100%;
+  transition: all 0.3s ease;
+      margin-bottom: -20px;
+}
+
+.course-name-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: white;
+}
+
+.course-desc-input {
+  font-size: 14px;
+  color: #6b7280;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 6px;
+  width: 100%;
+  transition: all 0.3s ease;
+  margin-top: -50px;
+}
+
+  .course-desc-input1 {
+  font-size: 14px;
+  color: #000000;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 6px;
+  width: 100%;
+  transition: all 0.3s ease;
+  
 }

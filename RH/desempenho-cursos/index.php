@@ -35,10 +35,18 @@ include '../../conexao.php';
     </div>
 
     <form action="pagina_exibicao.php" method="POST">
+    
       <div class="informacoes">
         <input type="text" class="section-title-input" name="titulo_secao1" value="Cursos concluídos e seus resultados:">
         <input type="text" class="course-title-input" name="curso1" value="Design de Equipamentos Industriais">
-
+        <div class="search-field">
+        <input type="text" class="search-input" placeholder="Digite o nome do funcionário aqui..." id="funcionarioInput" >
+        <div class="search-icon">
+            <svg fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+            </svg>
+        </div>
+    </div>
         <div class="completed-section">
           <div class="section1">
             <div class="progress-circle">

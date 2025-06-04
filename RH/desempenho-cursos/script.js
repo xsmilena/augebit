@@ -22,3 +22,5 @@ function atualizarProgressoVisual(container, valor, cor) {
       atualizarProgressoVisual(circle, input.value, '#6366f1');
     });
   });
+
+  // Redireciona automaticamente para index.php após 10 segundos (ou ajuste o tempo como quise

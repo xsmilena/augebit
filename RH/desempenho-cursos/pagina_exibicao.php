@@ -7,6 +7,7 @@ function h($str) {
 }
 
 // Recebendo dados enviados via POST
+$nome = isset($_POST['nome_funcionario']) ? htmlspecialchars($_POST['nome_funcionario']) : 'Funcionário';
 $titulo_secao1 = $_POST['titulo_secao1'] ?? '';
 $curso1 = $_POST['curso1'] ?? '';
 $porcentagem1 = $_POST['porcentagem1'] ?? '';
@@ -23,6 +24,18 @@ $curso_atual_nome = $_POST['curso_atual_nome'] ?? [];
 $curso_atual_desc1 = $_POST['curso_atual_desc1'] ?? [];
 $curso_atual_desc2 = $_POST['curso_atual_desc2'] ?? [];
 
+$conn->query("DELETE FROM cursos_atuais WHERE nome_funcionario = '$nome'");
+
+// Depois insere os novos
+for ($i = 0; $i < count($curso_atual_nome); $i++) {
+    $curso = $conn->real_escape_string($curso_atual_nome[$i]);
+    $desc1 = $conn->real_escape_string($curso_atual_desc1[$i]);
+    $desc2 = $conn->real_escape_string($curso_atual_desc2[$i]);
+    $progresso = intval($progresso_curso_atual[$i]);
+
+    $conn->query("INSERT INTO cursos_atuais (nome_funcionario, curso_nome, descricao_1, descricao_2, progresso)
+                  VALUES ('$nome', '$curso', '$desc1', '$desc2', $progresso)");
+}
 $titulo_secao3 = $_POST['titulo_secao3'] ?? '';
 $curso_pendente_nome = $_POST['curso_pendente_nome'] ?? [];
 $curso_pendente_desc = $_POST['curso_pendente_desc'] ?? [];
@@ -40,7 +53,7 @@ $curso_pendente_desc = $_POST['curso_pendente_desc'] ?? [];
   <div class="comeco">
     <img class="logo" src="./img/augebit.png" alt="" />
     <div class="texto">
-      <h1 class="saudacao1">Olá, Giovanna!</h1>
+      <h1 class="saudacao1">Olá, <?php echo $nome; ?>!</h1>
       <h1 class="saudacao2">Acompanhe seu desempenho nos treinamentos complementares</h1>
     </div>
   </div>
@@ -174,5 +187,6 @@ $curso_pendente_desc = $_POST['curso_pendente_desc'] ?? [];
 
     <script src="script.js"></script>
   </div>
+
 </body>
 </html>
