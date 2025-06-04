@@ -40,8 +40,8 @@ $curso_pendente_desc = $_POST['curso_pendente_desc'] ?? [];
   <div class="comeco">
     <img class="logo" src="./img/augebit.png" alt="" />
     <div class="texto">
-      <h1 class="saudacao1">Painel de Desempenho de Cursos</h1>
-      <h1 class="saudacao2">Preencha abaixo os dados de desempenho dos cursos do funcionário</h1>
+      <h1 class="saudacao1">Olá, Giovanna!</h1>
+      <h1 class="saudacao2">Acompanhe seu desempenho nos treinamentos complementares</h1>
     </div>
   </div>
 
