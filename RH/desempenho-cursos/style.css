@@ -12,6 +12,7 @@
         body {
             background-color: #EEEEFF;
   margin: 20px;
+  margin-right: 50px;
         }
 
 .logo {
@@ -39,7 +40,25 @@
     display: flex;
     flex-direction: column;
     margin: 0px;
+
 }
+
+.progress-bar {
+  width: 150px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4caf50;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
 
 .saudacao2 {
     margin: 0;
@@ -51,7 +70,19 @@
     }
 
 
-         
+.desempenho{
+background-color: #6c63ff;
+border-radius: 30px;
+border:none;
+height: 40px;
+padding-left: 10px;
+padding-right: 10px;
+font-family: 'Font2';
+color: white;
+  appearance: none; 
+
+}
+
           .sidebar {
         width: 70px;
         background-color: #6c63ff;
@@ -87,9 +118,9 @@
       
       /* Exemplo de ícones usando mask (ou pode usar SVG inline) */
       .icon.home       { mask: url('./img/home.png') no-repeat center; }
-      .icon.people   { mask: url('./img/people.png') no-repeat center; }
+      .icon.people   { mask: url('./img/peoplee.png') no-repeat center; }
       .icon.docs        { mask: url('./img/docs.png') no-repeat center; }
-      .icon.chapeu    { mask: url('./img/chapeu.png') no-repeat center; }
+      .icon.chapeu    { mask: url('./img/chapeuu.png') no-repeat center; }
       .icon.grafico      { mask: url('./img/grafico.png') no-repeat center; }
       .icon.calendario     { mask: url('./img/calendario.png') no-repeat center; }
       .icon.mapa      { mask: url('./img/mapa.png') no-repeat center; }
@@ -107,8 +138,8 @@
       }
       
       .icon-circle img {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
       }
 
       .tudo {
@@ -152,13 +183,49 @@ margin-left: 3px
         margin-top: 30px;
       }
 
+.content-wrapper {
+  display: flex;
+  justify-content: center; /* centraliza no eixo principal */
+  align-items: flex-start; /* alinha pelo topo */
+  gap: 40px; /* espaço entre o gráfico e a tabela */
+  margin-top: 20px;
+  flex-wrap: wrap;
+  flex-direction: row; /* para melhor adaptação em telas menores */
+}
+
+        .section1 {
+            background: white;
+            border-radius: 40px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+        -webkit-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+        -moz-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+           
+            display: flex;
+            align-items: center;
+            width: 90%;
+        }
 
         .section {
             background: white;
-            border-radius: 20px;
+            border-radius: 30px;
             padding: 30px;
             margin-bottom: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+        -webkit-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+        -moz-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+
+        }
+
+        
+        .section2 {
+            background: transparent;
+            border-radius: 20px;
+           
+            margin-bottom: 30px;
+            
+
         }
 
         .section-title-input {
@@ -189,8 +256,9 @@ margin-left: 3px
             border: 2px solid transparent;
             border-radius: 8px;
             padding: 8px;
-            width: 100%;
+            width: 80%;
             transition: all 0.3s ease;
+           
         }
 
         .course-title-input:focus {
@@ -210,6 +278,7 @@ margin-left: 3px
             width: 180px;
             height: 180px;
             flex-shrink: 0;
+            margin-right: 40px;
         }
 
         .circle-bg {
@@ -221,6 +290,7 @@ margin-left: 3px
             align-items: center;
             justify-content: center;
             position: relative;
+         
         }
 
         .circle-inner {
@@ -243,18 +313,23 @@ margin-left: 3px
             border: none;
             text-align: center;
             width: 80px;
+            padding-left: 20px;
+          
         }
 
         .percentage-input:focus {
             outline: none;
             background: #f8faff;
             border-radius: 8px;
+          
         }
 
         .percentage-label {
             font-size: 14px;
-            color: #6b7280;
+            color: #000000;
             margin-top: 5px;
+            font-family: 'Font2';
+            font-weight: 600;
         }
 
         .results-section {
@@ -263,7 +338,7 @@ margin-left: 3px
 
         .results-table {
             background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            border-radius: 15px;
+            border-radius: 30px;
             overflow: hidden;
             margin-bottom: 20px;
         }
@@ -333,26 +408,35 @@ margin-left: 3px
 
         .summary-card {
             background: #f8faff;
-            border-radius: 15px;
+            border-radius: 32px;
             padding: 25px;
             text-align: center;
-            margin-left: 30px;
+          
             min-width: 300px;
         }
 
         .summary-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            background-color: #6c63ff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
             color: white;
             font-size: 30px;
+            width: 45px;
+            height: 45px;
+            padding: 10px;
+            margin-right: 70px;
         }
 
+        .info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        }
+        
         .summary-title-input {
             font-size: 16px;
             font-weight: 600;
@@ -365,12 +449,29 @@ margin-left: 3px
             width: 100%;
             text-align: center;
             transition: all 0.3s ease;
+         
         }
+
+        .resumo {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 15px;
+            background: transparent;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            padding: 8px;
+            width: 100%;
+            transition: all 0.3s ease;
+            font-family: 'Font2';
+        }
+
 
         .summary-title-input:focus {
             outline: none;
             border-color: #6366f1;
             background: white;
+            
         }
 
         .summary-textarea {
@@ -399,13 +500,18 @@ margin-left: 3px
             gap: 20px;
         }
 
-        .course-card {
-            background: #f8faff;
-            border-radius: 15px;
+
+
+          .course-card1{
+            background-color: white;
+            border-radius: 35px;
             padding: 25px;
             display: flex;
             align-items: center;
             gap: 20px;
+            box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+-webkit-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+-moz-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
         }
 
         .course-progress {
@@ -431,6 +537,7 @@ margin-left: 3px
             font-size: 14px;
             text-align: center;
             width: 40px;
+            
         }
 
         .progress-input:focus {
@@ -454,6 +561,7 @@ margin-left: 3px
             padding: 6px;
             width: 100%;
             transition: all 0.3s ease;
+                margin-bottom: -20px;
         }
 
         .course-name-input:focus {
@@ -471,12 +579,27 @@ margin-left: 3px
             padding: 6px;
             width: 100%;
             transition: all 0.3s ease;
+            margin-top: -50px;
         }
+
+            .course-desc-input1 {
+            font-size: 14px;
+            color: #000000;
+            background: transparent;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            padding: 6px;
+            width: 100%;
+            transition: all 0.3s ease;
+            
+        }
+
 
         .course-desc-input:focus {
             outline: none;
             border-color: #6366f1;
             background: white;
+            
         }
 
         .pending-courses {
@@ -486,11 +609,15 @@ margin-left: 3px
         }
 
         .pending-card {
-            background: #f8faff;
-            border-radius: 15px;
+            background: white;
+            border-radius: 30px;
             padding: 25px;
             display: flex;
             gap: 20px;
+            align-items: center;
+               box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+-webkit-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
+-moz-box-shadow: 2px 5px 19px -1px rgba(153,152,255,0.7);
         }
 
         .pending-content {
@@ -508,6 +635,7 @@ margin-left: 3px
             padding: 8px;
             width: 100%;
             transition: all 0.3s ease;
+            font-family: 'Font2';
         }
 
         .pending-title-input:focus {
@@ -528,6 +656,7 @@ margin-left: 3px
             padding: 8px;
             resize: vertical;
             transition: all 0.3s ease;
+            font-family: 'Font2';
         }
 
         .pending-desc-textarea:focus {
@@ -537,15 +666,13 @@ margin-left: 3px
         }
 
         .pending-illustration {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            border-radius: 15px;
+            width: 160px;
+            height:160px;
+           
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 35px;
+           
             flex-shrink: 0;
         }
 
