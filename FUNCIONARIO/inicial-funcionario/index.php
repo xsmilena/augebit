@@ -65,7 +65,7 @@ $cursos_atuais = json_decode($row['cursos_atuais'], true);
                 <div class="caixa1">
                     <img class="img2" src="./img/img2.png" alt="">
                     <div class="textinhos">
-                        <a class="info-texto2" href="">Cursos</a>
+                        <a class="info-texto2" href="/augebit/RH/desempenho-cursos/pagina_exibicao.php?id=<?= $id ?>">Cursos</a>
                         <a class="info-subtexto2" href="">Desempenho nos cursos</a>
                     </div>
                 </div>
