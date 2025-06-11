@@ -23,7 +23,7 @@ include '../../conexao.php';
     <div class="tudo1">
       <div class="sidebar">
         <a href="" class="menu-item"><span class="icon home"></span></a>
-        <a href="" class="menu-item"><span class="icon people"></span></a>
+        <a href="/augebit/RH/gerenciamento-funcionarios/index.php" class="menu-item"><span class="icon people"></span></a>
         <a href="" class="menu-item"><span class="icon docs"></span></a>
         <div class="icon-circle"><img src="img/chapeuu.png" alt="Home icon"></div>
         <a href="" class="menu-item"><span class="icon grafico"></span></a>

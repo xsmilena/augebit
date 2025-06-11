@@ -1,6 +1,5 @@
 <?php
 include '../../conexao.php'; // ajusta o caminho conforme sua estrutura
-$usuario = "Giovanna";
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +14,7 @@ $usuario = "Giovanna";
   <div class="comeco">
     <img class="logo" src="./img/augebit.png" alt="">
     <div class="texto">
-      <h1 class="saudacao1">Olá, <?php echo $usuario; ?>!</h1>
+      <h1 class="saudacao1">Painel de Gerenciamento dos funcionários</h1>
       <h1 class="saudacao2">Adicione, atualize ou remova dados bancários dos funcionários</h1>
     </div>
   </div>
@@ -25,7 +24,7 @@ $usuario = "Giovanna";
         <a href="" class="menu-item"><span class="icon home"></span></a>
         <div class="icon-circle"><img src="img/people.png" alt="Home icon"></div>
         <a href="" class="menu-item"><span class="icon docs"></span></a>
-        <a href="" class="menu-item"><span class="icon chapeu"></span></a>
+        <a href="/augebit/RH/desempenho-cursos/index.php" class="menu-item"><span class="icon chapeu"></span></a>
         <a href="" class="menu-item"><span class="icon grafico"></span></a>
         <a href="" class="menu-item"><span class="icon calendario"></span></a>
       </div>
